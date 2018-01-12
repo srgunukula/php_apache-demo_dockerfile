@@ -1,0 +1,13 @@
+# clone https://github.com/srgunukula/php_apache-demo_dockerfile.git
+#to create a image from a Dockerfile
+# 
+docker build -t php-apache:latest .
+
+docker run -d --name phpapachecontainer -p 80:80 php-apache 
+
+docker cp helloworld.php phpapachecontainer:/var/www/html
+docker cp phpinfo.php phpapachecontainer:/var/www/html
+
+open browser and type localhost:80/phpinfo.php or localhost:80/helloworld.php
+
+ITS DONE.
